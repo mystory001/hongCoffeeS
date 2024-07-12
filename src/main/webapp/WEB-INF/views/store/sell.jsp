@@ -270,23 +270,23 @@ label input[type=radio]:checked:after {
 							<c:forEach var="ResultDTO" items="${sellList}">
 								<tr>
 									<td
-										style="text-align: center !important; font-size: 20px !important;"><label
+										style="text-align: center !important; font-size: 15px !important;"><label
 										for="radio1-true"><input type="radio" name="radio1"
 											id="radio1-true" value="${ResultDTO.rs_num }"></label></td>
 											
 									<td
-										style="text-align: center !important; font-size: 20px !important;">${ResultDTO.rs_date}</td>
+										style="text-align: center !important; font-size: 15px !important;">${ResultDTO.rs_date}</td>
 									<td
-										style="text-align: center !important; font-size: 20px !important;">${ResultDTO.prod_name}</td>
+										style="text-align: center !important; font-size: 15px !important;">${ResultDTO.prod_name}</td>
 									<td
-										style="text-align: center !important; font-size: 20px !important;">${ResultDTO.sales}</td>
+										style="text-align: center !important; font-size: 15px !important;">${ResultDTO.sales}</td>
 									<td
-										style="text-align: center !important; font-size: 20px !important;">
+										style="text-align: center !important; font-size: 15px !important;">
 										<fmt:formatNumber value="${ResultDTO.prod_price}"
 											pattern="#,###"></fmt:formatNumber>
 									</td>
 									<td
-										style="text-align: center !important; font-size: 20px !important; color: green;">
+										style="text-align: center !important; font-size: 15px !important; color: green;">
 										<fmt:formatNumber
 											value="${ResultDTO.prod_price * ResultDTO.sales}"
 											pattern="#,###"></fmt:formatNumber>
@@ -298,23 +298,23 @@ label input[type=radio]:checked:after {
 						
 						 <div id="page_control">
 		<c:if test="${pageDTO.startPage > pageDTO.pageBlock}">
-			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${pageDTO.startPage - pageDTO.pageBlock}">Prev</a>
+			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${pageDTO.startPage - pageDTO.pageBlock}" style="font-size: 20px">Prev</a>
 		</c:if>
 		
 		<c:if test="${pageDTO.count ne -1}">
 		<c:forEach var="i" begin="${pageDTO.startPage}" end="${pageDTO.endPage}" step="1">
-			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${i}">${i}</a>
+			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${i}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 		
 		<c:if test="${pageDTO.count eq -1}">
 		<c:forEach var="i" begin="${resultDTO.startPage}" end="${resultDTO.endPage}" step="1">
-			<a href="${pageContext.request.contextPath}/store/sellSearch?pageNum=${i}&rs_minDate=${resultDTO.rs_minDate}&rs_maxDate=${resultDTO.rs_maxDate}">${i}</a>
+			<a href="${pageContext.request.contextPath}/store/sellSearch?pageNum=${i}&rs_minDate=${resultDTO.rs_minDate}&rs_maxDate=${resultDTO.rs_maxDate}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 
 		<c:if test="${pageDTO.endPage < pageDTO.pageCount}">
-			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${pageDTO.startPage + pageDTO.pageBlock}">Next</a>
+			<a href="${pageContext.request.contextPath}/store/sell?pageNum=${pageDTO.startPage + pageDTO.pageBlock}" style="font-size: 20px">Next</a>
 		</c:if>
 
 		</div>

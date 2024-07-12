@@ -234,34 +234,34 @@ label input[type=radio]:checked:after{
  		 <c:forEach var="ResultDTO" items="${resultList}">
   <tr>
 
-<td style="text-align: center !important; font-size:20px !important;"><label for="radio1-true"><input type="radio" name="radio1" id="radio1-true"></label></td>
+<td style="text-align: center !important; font-size:15px !important;"><label for="radio1-true"><input type="radio" name="radio1" id="radio1-true"></label></td>
 
-<%--    	<td style="text-align: center !important; font-size:20px !important;"><fmt:formatDate value="${ResultDTO.rs_date}" pattern="yyyy.MM.dd"/></td> --%>
-<!--    	<td style="text-align: center !important; font-size:20px !important; color:red;"> -->
+<%--    	<td style="text-align: center !important; font-size:15px !important;"><fmt:formatDate value="${ResultDTO.rs_date}" pattern="yyyy.MM.dd"/></td> --%>
+<!--    	<td style="text-align: center !important; font-size:15px !important; color:red;"> -->
 
-   	<td style="text-align: center !important; font-size:20px !important;">${ResultDTO.rs_date}</td>
-   	<td style="text-align: center !important; font-size:20px !important; color:red;">
+   	<td style="text-align: center !important; font-size:15px !important;">${ResultDTO.rs_date}</td>
+   	<td style="text-align: center !important; font-size:15px !important; color:red;">
 
    	<fmt:formatNumber value="${ResultDTO.jichul}" pattern="#,###"></fmt:formatNumber>
    	</td>
-    <td style="text-align: center !important; font-size:20px !important; color:green;">
+    <td style="text-align: center !important; font-size:15px !important; color:green;">
     <fmt:formatNumber value="${ResultDTO.maechul}" pattern="#,###"></fmt:formatNumber>
     </td>
 
 <c:if test="${ResultDTO.income eq 0}">
-   	<td style="text-align: center !important; font-size:20px !important; color:blue; ">
+   	<td style="text-align: center !important; font-size:15px !important; color:blue; ">
    	<fmt:formatNumber value="${ResultDTO.income}" pattern="#,###"></fmt:formatNumber>
    	</td>
 </c:if>
 
 <c:if test="${ResultDTO.income gt 0}">
-   	<td style="text-align: center !important; font-size:20px !important; color:green; ">
+   	<td style="text-align: center !important; font-size:15px !important; color:green; ">
    	<fmt:formatNumber value="${ResultDTO.income}" pattern="#,###"></fmt:formatNumber>
    	</td>
 </c:if>
 
 <c:if test="${ResultDTO.income lt 0}">
-   	<td style="text-align: center !important; font-size:20px !important; color:red; ">
+   	<td style="text-align: center !important; font-size:15px !important; color:red; ">
    	<fmt:formatNumber value="${ResultDTO.income}" pattern="#,###"></fmt:formatNumber>
    	</td>
 </c:if>
@@ -274,23 +274,23 @@ label input[type=radio]:checked:after{
  		 
  		 <div id="page_control">
 		<c:if test="${pageDTO.startPage > pageDTO.pageBlock}">
-			<a href="${pageContext.request.contextPath}/store/result?pageNum=${pageDTO.startPage - pageDTO.pageBlock}">Prev</a>
+			<a href="${pageContext.request.contextPath}/store/result?pageNum=${pageDTO.startPage - pageDTO.pageBlock}" style="font-size: 20px">Prev</a>
 		</c:if>
 		
 		<c:if test="${pageDTO.count ne -1}">
 		<c:forEach var="i" begin="${pageDTO.startPage}" end="${pageDTO.endPage}" step="1">
-			<a href="${pageContext.request.contextPath}/store/result?pageNum=${i}">${i}</a>
+			<a href="${pageContext.request.contextPath}/store/result?pageNum=${i}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 		
 		<c:if test="${pageDTO.count eq -1}">
 		<c:forEach var="i" begin="${resultDTO.startPage}" end="${resultDTO.endPage}" step="1">
-			<a href="${pageContext.request.contextPath}/store/resultSearch?pageNum=${i}&rs_minDate=${resultDTO.rs_minDate}&rs_maxDate=${resultDTO.rs_maxDate}">${i}</a>
+			<a href="${pageContext.request.contextPath}/store/resultSearch?pageNum=${i}&rs_minDate=${resultDTO.rs_minDate}&rs_maxDate=${resultDTO.rs_maxDate}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 
 		<c:if test="${pageDTO.endPage < pageDTO.pageCount}">
-			<a href="${pageContext.request.contextPath}/store/result?pageNum=${pageDTO.startPage + pageDTO.pageBlock}">Next</a>
+			<a href="${pageContext.request.contextPath}/store/result?pageNum=${pageDTO.startPage + pageDTO.pageBlock}" style="font-size: 20px">Next</a>
 		</c:if>
 
 		</div>

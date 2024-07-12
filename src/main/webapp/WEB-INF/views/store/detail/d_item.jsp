@@ -55,10 +55,10 @@ font-size: 16px;
 <tr>
 	<th>상태</th>	
 	<c:if test="${itemDTO.item_state eq 0}">
-      <td >취급</td>
+      <td style="color:green;"colspan="3">취급</td>
   	</c:if>
   	<c:if test="${itemDTO.item_state eq 1}">
-      <td >미취급</td>
+      <td style="color:red;" colspan="3">미취급</td>
   	</c:if>
  
 </tr>

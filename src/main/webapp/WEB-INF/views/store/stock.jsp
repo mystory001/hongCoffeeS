@@ -243,26 +243,26 @@ label input[type=radio]:checked:after{
  		 <c:forEach var="StockDTO" items="${stockList}">
   <tr onclick="window.open('${pageContext.request.contextPath}/store/detail/d_stock?stock_num=${StockDTO.stock_num}','홍커피','width=1500,height=725,top=100, left=200,scrollbars=yes')">
 
-<td style="text-align: center !important; font-size:20px !important;" onclick="event.cancelBubble=true"><label for="radio1-true"><input type="radio" name="radio1" id="radio1-true" value="${StockDTO.stock_num }"></label></td>
+<td style="text-align: center !important; font-size:15px !important;" onclick="event.cancelBubble=true"><label for="radio1-true"><input type="radio" name="radio1" id="radio1-true" value="${StockDTO.stock_num }"></label></td>
   <c:if test="${StockDTO.item_type eq 0}">
-   	<td style="text-align: center !important; font-size:20px !important; color:#4E342E;">식품</td>
+   	<td style="text-align: center !important; font-size:15px !important; color:#4E342E;">식품</td>
    	</c:if>
    	<c:if test="${StockDTO.item_type eq 1}">
-   	<td style="text-align: center !important; font-size:20px !important; color:#FF3D00;">비식품</td>
+   	<td style="text-align: center !important; font-size:15px !important; color:#FF3D00;">비식품</td>
    	</c:if>
    	
 
-   	<td style="text-align: center !important; font-size:20px !important;">${StockDTO.item_name}</td>
-    <td style="text-align: center !important; font-size:20px !important;">
+   	<td style="text-align: center !important; font-size:15px !important;">${StockDTO.item_name}</td>
+    <td style="text-align: center !important; font-size:15px !important;">
     <fmt:formatNumber value="${StockDTO.item_price}" pattern="#,###"></fmt:formatNumber>
     </td>
-   	<td style="text-align: center !important; font-size:20px !important;">${StockDTO.amount}</td>
+   	<td style="text-align: center !important; font-size:15px !important;">${StockDTO.amount}</td>
    	
    	  <c:if test="${StockDTO.item_state eq 0}">
-      <td style="text-align: center !important; font-size:20px !important; color:green; ">취급</td>
+      <td style="text-align: center !important; font-size:15px !important; color:green; ">취급</td>
   	</c:if>
   	<c:if test="${StockDTO.item_state eq 1}">
-      <td style="text-align: center !important; font-size:20px !important; color:red; ">미취급</td>
+      <td style="text-align: center !important; font-size:15px !important; color:red; ">미취급</td>
   	</c:if>
   	
   </tr>
@@ -272,12 +272,12 @@ label input[type=radio]:checked:after{
  		 
  		 <div id="page_control">
 		<c:if test="${pageDTO.startPage > pageDTO.pageBlock}">
-			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${pageDTO.startPage - pageDTO.pageBlock}">Prev</a>
+			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${pageDTO.startPage - pageDTO.pageBlock}" style="font-size: 20px">Prev</a>
 		</c:if>
 		
 		<c:if test="${pageDTO.count ne -1}">
 		<c:forEach var="i" begin="${pageDTO.startPage}" end="${pageDTO.endPage}" step="1">
-			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${i}">${i}</a>
+			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${i}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 		
@@ -285,20 +285,15 @@ label input[type=radio]:checked:after{
 		<c:forEach var="i" begin="${stockDTO.startPage}" end="${stockDTO.endPage}" step="1">
 			<a href="${pageContext.request.contextPath}/store/stockSearch?pageNum=${i}&item_type=${stockDTO.item_type}&item_name=${stockDTO.item_name}
 			&item_minPrice=${stockDTO.item_minPrice}&item_maxPrice=${stockDTO.item_maxPrice}
-			&amount_min=${stockDTO.amount_min}&amount_max=${stockDTO.amount_max}">${i}</a>
+			&amount_min=${stockDTO.amount_min}&amount_max=${stockDTO.amount_max}" style="font-size: 20px">${i}</a>
 		</c:forEach>
 		</c:if>
 
 		<c:if test="${pageDTO.endPage < pageDTO.pageCount}">
-			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${pageDTO.startPage + pageDTO.pageBlock}">Next</a>
+			<a href="${pageContext.request.contextPath}/store/stock?pageNum=${pageDTO.startPage + pageDTO.pageBlock}" style="font-size: 20px">Next</a>
 		</c:if>
 
 		</div>
- 		 
- 		 
- 		 
- 		 
- 		 
  		 
 		</div>
         

@@ -65,10 +65,10 @@ font-size: 16px;
 <tr>
 	<th>입고여부</th>
 	<c:if test="${orderDTO.received_not eq 0}">
-      <td style="color:red; ">미입고</td>
+      <td style="color:red;" colspan="3">미입고</td>
   	</c:if>
 	<c:if test="${orderDTO.received_not eq 1}">
-		<td style=" color:green; ">입고완료</td>
+		<td style="color:green;" colspan="3">입고완료</td>
 	</c:if>
 
 </tr>
